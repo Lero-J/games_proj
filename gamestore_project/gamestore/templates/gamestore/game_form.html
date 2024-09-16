@@ -1,0 +1,16 @@
+{% extends 'gamestore/base.html' %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Edit game{% else %}Add game{% endif %}</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'index' %}"><button type="submit">Save</button></a> 
+    </form>
+{% endblock %}
+
+
+
+
+
+

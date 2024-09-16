@@ -1,0 +1,11 @@
+{% extends 'gamestore/base.html' %}
+
+{% block content %}
+    <h2>Delete game "{{ game.title }}"</h2>
+    <p>Do you really have a desire to delete the game?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'game-detail' game.pk %}">Cancel</a>
+    </form>
+{% endblock %}
